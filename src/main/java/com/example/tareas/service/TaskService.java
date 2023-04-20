@@ -15,6 +15,8 @@ public interface TaskService {
 
     List<Task>getTaskByStatus(Taskstatus taskstatus);
 
-    void updateTaskAscompleted(Long id);
+    ResponseEntity<Void> updateTaskAscompleted(Long id);
+    ResponseEntity<Void> deleteOneTask(Long id);
+
 
 }

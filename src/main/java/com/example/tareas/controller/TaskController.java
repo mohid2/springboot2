@@ -23,7 +23,7 @@ public class TaskController {
         return service.getAllTask();
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Task> getOneTask(@PathVariable Long id){
+    public ResponseEntity<Task> getOneTask(@PathVariable("id") Long id){
         return service.getOneTask(id);
     }
     @GetMapping("status/{status}")
@@ -36,8 +36,11 @@ public class TaskController {
     }
     @PatchMapping("/{id}")
     public ResponseEntity<Void> updateTaskAscompleted(@PathVariable("id") Long id){
-        service.updateTaskAscompleted(id);
-       return ResponseEntity.noContent().build();
+        return service.updateTaskAscompleted(id);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteOneTask(@PathVariable("id") Long id){
+        return service.deleteOneTask(id);
     }
 
 }

@@ -50,8 +50,21 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     @Transactional
-    public void updateTaskAscompleted(Long id) {
-        repository.updateTaskCompleted(id);
+    public ResponseEntity<Void>  updateTaskAscompleted(Long id) {
+        if(repository.existsById(id)){
+            repository.updateTaskCompleted(id);
+           return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @Override
+    public ResponseEntity<Void> deleteOneTask(Long id) {
+        if(repository.existsById(id)){
+             repository.deleteById(id);
+             return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 
 

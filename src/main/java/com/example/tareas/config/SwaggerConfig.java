@@ -27,11 +27,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Todo API",
-                "La API REST de ToDo App.",
+                "Tareas",
+                "La API REST de Treas.",
                 "v1",
                 "Terms of service",
-                new Contact("Mohammed el yousfi", "www.example.com", "myeaddress@company.com"),
+                new Contact("Mohammed el yousfi", "www.example.com", "mohammedelyousfi3@gmail.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 }
